@@ -1,0 +1,19 @@
+<h1 class='text-center my-3'>Posts</h1>
+
+<div class="mb-4">
+  <% @posts.each do |post| %>
+    <!-- <p class="my-1"><%= post.title %></p>
+    <p><%= link_to 'Show', post, class: "mr-1" %>
+    <%= link_to 'Edit', edit_post_path(post), class: "mr-1" %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+
+    <div class="bg-white rounded box-shadow container my-3 py-2">
+      <h3><%= link_to post.title, post_path(post)%></h3>
+      <p><%= post.body %></p>
+      <p class='my-0'><%= link_to 'Edit Post', edit_post_path(post) %></p>
+      <p><%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Post', new_post_path %>
